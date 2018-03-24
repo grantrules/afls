@@ -3,9 +3,8 @@ import { Paper, RaisedButton } from 'material-ui'
 
 const style = {
     paper: {
-        width: 800,
+        margin: 20,
         padding: 20,
-        margin: "0 auto"
     }
 }
 
