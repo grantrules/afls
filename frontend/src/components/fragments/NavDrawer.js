@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, MenuItem, RaisedButtom, Divider, AppBar } from 'material-ui'
+import { Drawer, MenuItem, Divider, AppBar } from 'material-ui'
 import School from 'material-ui/svg-icons/social/school';
 import Group from 'material-ui/svg-icons/social/group'
 import Chart from 'material-ui/svg-icons/editor/insert-chart'

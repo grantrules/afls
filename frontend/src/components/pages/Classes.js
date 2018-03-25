@@ -2,7 +2,7 @@ import React from 'react'
 import { List, ListItem } from 'material-ui/List'
 import Divider from 'material-ui/Divider'
 import Subheader from 'material-ui/Subheader'
-import { darkBlack, indigo200 } from 'material-ui/styles/colors'
+import { indigo200 } from 'material-ui/styles/colors'
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 

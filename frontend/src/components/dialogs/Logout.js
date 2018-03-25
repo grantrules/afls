@@ -11,7 +11,7 @@ class Logout extends React.Component {
     render() {
         let close = this.props.close;
         const actions = [
-            <FlatButton
+            <RaisedButton
                 label="No"
                 primary={true}
                 onClick={close}
