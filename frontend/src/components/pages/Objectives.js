@@ -2,9 +2,11 @@ import React from 'react'
 import { List, ListItem } from 'material-ui/List'
 import Divider from 'material-ui/Divider'
 import Subheader from 'material-ui/Subheader'
-import { darkBlack } from 'material-ui/styles/colors'
+import common from 'material-ui/colors/common';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add';
+import ContentAdd from 'material-ui-icons/Add';
+
+const darkBlack = common.darkBlack;
 
 
 const style = {
