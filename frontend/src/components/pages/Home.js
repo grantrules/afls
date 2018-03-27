@@ -17,7 +17,7 @@ const Home = () => (
                 
                 <p>Hello, This is objective mastery grading software for Assessment of Functional Living Skills</p>
                 <p>Do your school use these books and need a digital solution to grading?</p>
-                <Button variant="raised" label="Contact us" href="/contact-us"/>
+                <Button variant="raised" component="a" href="/contact-us">Contact Us</Button>
 
                 
                 </div>

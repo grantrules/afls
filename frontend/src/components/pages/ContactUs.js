@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, Paper, TextField } from 'material-ui'
+import { FormControl, FormHelperText } from 'material-ui/Form';
+
 
 const style = {
     paper: {
@@ -15,22 +17,26 @@ const ContactUs = () => (
         <Paper style={style.paper} zDepth={3}>
         <h2>Send us a message!</h2>
         <TextField
-                id="name"
-                hintText="Name"
-            /><br />
-            <TextField
-                id="email"
-                hintText="Email Address"
-            /><br />
-            <TextField
-            hintText="Message"
-            floatingLabelText="Questions or comments? Let us know!"
-            multiLine={true}
-            style={{width:"100%"}}
-            rows={2}
-          /><br />
+          id="name"
+          label="Name"
+          margin="normal"
+        /><br />
+        <TextField
+          id="email"
+          label="Email Address"
+          margin="normal"
+        /><br />
+<FormControl fullWidth>
+        <TextField
+          id="textarea"
+          label="Questions or comments? Let us know!"
+          placeholder="Message"
+          multiline
+          margin="normal"
+        /><br />
+        </FormControl>
 
-            <Button variant="raised" label="Send" />
+            <Button variant="raised">Send</Button>
         </Paper>
 
     </div>
