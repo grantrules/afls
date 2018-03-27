@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+
 import { Drawer, MenuItem, Divider } from 'material-ui'
 import School from 'material-ui-icons/School';
 import Group from 'material-ui-icons/Group'
@@ -6,7 +8,9 @@ import Chart from 'material-ui-icons/InsertChart'
 import AssignmentTurnedIn from 'material-ui-icons/AssignmentTurnedIn'
 import Exit from 'material-ui-icons/ExitToApp'
 import { withStyles } from 'material-ui/styles';
-import { ListItem, ListItemText, ListItemIcon } from 'material-ui/List';
+import withWidth, { isWidthUp } from 'material-ui/utils/withWidth';
+
+import { ListItemText, ListItemIcon } from 'material-ui/List';
 
 
 import Logout from '../dialogs/Logout'
@@ -16,6 +20,9 @@ const styles = theme => ({
       position: 'relative',
       width: 240,
     },
+    drawerPaperSm: {
+        width: 240,
+    },
     toolbar: theme.mixins.toolbar,
   });
 
@@ -24,11 +31,11 @@ class NavDrawer extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { open: false, logout: false };
+        this.state = { open: true, logout: false };
     }
 
     state = {
-        open: false,
+        open: true,
         logout: false,
     };
 
@@ -41,30 +48,39 @@ class NavDrawer extends React.Component {
     handleToggle = () => this.setState({ open: !this.state.open });
 
     render() {
-        const { classes } = this.props;
-        return (
-            <Drawer variant="permanent" classes={{paper: classes.drawerPaper}}>
-        <div className={classes.toolbar} />
+        const { width, classes } = this.props;
+        const { open } = this.state;
 
-                <MenuItem component="a" href="/classes">
+        const showDrawer = isWidthUp("sm", width);
+
+        return (
+            <Drawer
+                variant={(showDrawer && "permanent") || "temporary"}
+                open={showDrawer || open}
+                classes={{paper: (showDrawer && classes.drawerPaper) || classes.drawerPaperSm}}>
+       
+       
+                 <div className={classes.toolbar} />
+
+                <MenuItem component={Link} to="/classes">
                     <ListItemIcon><School/></ListItemIcon>
                     <ListItemText primary="Classes"/>
                 </MenuItem>
 
-                <MenuItem component="a" href="/objectives">
+                <MenuItem component={Link} to="/objectives">
                     <ListItemIcon><AssignmentTurnedIn/></ListItemIcon>
                     <ListItemText primary="Objectives"/>
                 </MenuItem>
                 
 
-                <MenuItem component="a" href="/students">
+                <MenuItem component={Link} to="/students">
                     <ListItemIcon><Group/></ListItemIcon>
                     <ListItemText primary="Students"/>
                 </MenuItem>
 
                 <Divider inset={true} />
 
-                <MenuItem component="a" href="#">
+                <MenuItem component={Link} to="#">
                     <ListItemIcon><Chart/></ListItemIcon>
                     <ListItemText primary="Reports"/>
                 </MenuItem>
@@ -84,4 +100,4 @@ class NavDrawer extends React.Component {
     }
 }
 
-export default withStyles(styles)(NavDrawer)
+export default withStyles(styles)(withWidth()(NavDrawer))

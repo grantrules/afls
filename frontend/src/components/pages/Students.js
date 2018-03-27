@@ -28,16 +28,16 @@ const Students = () => (
             <Avatar>
                 <ActionGrade color={pinkA200}/>
             </Avatar>
-            <ListItemText primary="Chelsea Otakan"/>
+            <ListItemText inset primary="Chelsea Otakan"/>
         </ListItem>
         <ListItem>
-            <ListItemText primary="Eric Hoffman"/>
+            <ListItemText inset primary="Eric Hoffman"/>
         </ListItem>
         <ListItem>
-            <ListItemText primary="James Anderson"/>
+            <ListItemText inset primary="James Anderson"/>
         </ListItem>
         <ListItem>
-            <ListItemText primary="Kerem Suer"/>
+            <ListItemText inset primary="Kerem Suer"/>
         </ListItem>
     </List>
     <Divider inset={true} />
@@ -49,17 +49,17 @@ const Students = () => (
                 >
                     A
           </Avatar>
-            <ListItemText primary="Chelsea Otakan"/>
+            <ListItemText inset primary="Chelsea Otakan"/>
         </ListItem>
 
         <ListItem>
-            <ListItemText primary="Adam Adannaway"/>
+            <ListItemText inset primary="Adam Adannaway"/>
         </ListItem>
         <ListItem>
-            <ListItemText primary="Allie Grace"/>
+            <ListItemText inset primary="Allie Grace"/>
         </ListItem>
         <ListItem>
-            <ListItemText primary="Angel Cuervas"/>
+            <ListItemText inset primary="Angel Cuervas"/>
         </ListItem>
     </List>
 

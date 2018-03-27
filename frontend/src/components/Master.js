@@ -1,20 +1,35 @@
 import React, { Component } from 'react';
-import { MuiThemeProvider, getMuiTheme } from 'material-ui/styles'
-import { colors } from 'material-ui/styles'
+import { MuiThemeProvider } from 'material-ui/styles'
 
 import { CssBaseline, Button, AppBar } from 'material-ui'
-import Home from 'material-ui-icons/Assignment';
+//import Home from 'material-ui-icons/Assignment';
 import NavDrawer from './fragments/NavDrawer'
 
-import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
+import { createMuiTheme } from 'material-ui/styles';
+import Hidden from 'material-ui/Hidden';
 
-const drawerWidth = 240;
 
+import indigo from 'material-ui/colors/indigo';
+import pink from 'material-ui/colors/pink';
+import { darken } from 'material-ui/styles/colorManipulator';
+
+
+//const drawerWidth = 240;
+
+const theme = createMuiTheme({
+      palette: {
+        primary: indigo,
+        secondary: {
+          // Darken so we reach the AA contrast ratio level.
+          main: darken(pink.A400, 0.08),
+        },
+      },
+    });
 
 const styles = theme => ({
     root: {
@@ -62,25 +77,26 @@ class Master extends Component {
         const { classes } = this.props;
 
         return (
-            <MuiThemeProvider>
+            <MuiThemeProvider theme={theme}>
                 <div className={classes.root}>
 
                 <CssBaseline />
 
                 <AppBar position="absolute" className={classes.appBar}>
                     <Toolbar>
+                        <Hidden smUp>
                         <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
                             <MenuIcon />
                         </IconButton>
+                        </Hidden>
                         <Typography variant="title" color="inherit" className={classes.flex}>
-                            Title
+                            AFLS-OMG
                         </Typography>
                         <Button color="inherit" href="/login">Login</Button>
                     </Toolbar>
                 </AppBar>
 
-                <NavDrawer />
-
+                    <NavDrawer />
                 <main className={classes.content} >
                     <div className={classes.toolbar} />
 

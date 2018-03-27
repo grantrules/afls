@@ -4,8 +4,6 @@ import Divider from 'material-ui/Divider'
 import indigo from 'material-ui/colors/indigo';
 import Button from 'material-ui/Button';
 import ContentAdd from 'material-ui-icons/Add';
-const indigo200 = indigo['200'];
-
 
 const style = {
     button: {
