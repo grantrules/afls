@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper, RaisedButton } from 'material-ui'
+import { Paper, Button } from 'material-ui'
 
 const style = {
     paper: {
@@ -17,7 +17,7 @@ const Home = () => (
                 
                 <p>Hello, This is objective mastery grading software for Assessment of Functional Living Skills</p>
                 <p>Do your school use these books and need a digital solution to grading?</p>
-                <RaisedButton label="Contact us" href="/contact-us"/>
+                <Button variant="raised" label="Contact us" href="/contact-us"/>
 
                 
                 </div>

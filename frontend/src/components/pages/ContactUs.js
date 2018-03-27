@@ -1,5 +1,5 @@
 import React from 'react';
-import { RaisedButton, Paper, TextField } from 'material-ui'
+import { Button, Paper, TextField } from 'material-ui'
 
 const style = {
     paper: {
@@ -30,7 +30,7 @@ const ContactUs = () => (
             rows={2}
           /><br />
 
-            <RaisedButton label="Send" />
+            <Button variant="raised" label="Send" />
         </Paper>
 
     </div>

@@ -1,9 +1,8 @@
 import React from 'react'
-import { List, ListItem } from 'material-ui/List'
+import List, { ListItem, ListItemText } from 'material-ui/List';
 import Divider from 'material-ui/Divider'
-import Subheader from 'material-ui/Subheader'
 import common from 'material-ui/colors/common';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
+import Button from 'material-ui/Button';
 import ContentAdd from 'material-ui-icons/Add';
 
 const darkBlack = common.darkBlack;
@@ -21,64 +20,41 @@ const style = {
 const Objectives = () => (
     <div className="App">
         <List>
-            <Subheader>Objectives</Subheader>
-            <ListItem
-                primaryText="Changes toilet paper roll when empty"
-                secondaryText={
+            <ListItem>
+                <ListItemText primary="Changes toilet paper when empty" secondary={
                     <p>
-                        <span style={{ color: darkBlack }}>TL 19</span> --
+                    <span style={{ color: darkBlack }}>TL 19</span> --
                         When	existing	roll	ends,	learner
                         will	initiate	and	replace	with
                         new	toilet	paper	roll	when
                         existing	roll	ends
-            </p>
-                }
-                secondaryTextLines={1}
-            />
+                    </p>
+                    }/>
+            </ListItem>
             <Divider inset={true} />
 
-
-
-            <ListItem
-                primaryText="Changes toilet paper roll when empty"
-                secondaryText={
+<ListItem>
+                <ListItemText primary="Changes toilet paper when empty" secondary={
                     <p>
-                        <span style={{ color: darkBlack }}>TL 19</span> --
+                    <span style={{ color: darkBlack }}>TL 19</span> --
                         When	existing	roll	ends,	learner
                         will	initiate	and	replace	with
                         new	toilet	paper	roll	when
                         existing	roll	ends
-            </p>
-                }
-                secondaryTextLines={1}
-            />
+                    </p>
+                    }/>
+            </ListItem>
             <Divider inset={true} />
-
-
-            <ListItem
-                primaryText="Changes toilet paper roll when empty"
-                secondaryText={
-                    <p>
-                        <span style={{ color: darkBlack }}>TL 19</span> --
-                        When	existing	roll	ends,	learner
-                        will	initiate	and	replace	with
-                        new	toilet	paper	roll	when
-                        existing	roll	ends
-            </p>
-                }
-                secondaryTextLines={1}
-            />
-            <Divider inset={true} />
-
         </List>
 
-        <FloatingActionButton style={style.button} secondary={true}>
-          <ContentAdd />
-        </FloatingActionButton>
+        <Button variant="fag" style={style.button}>
+            <ContentAdd />
+        </Button>
 
-        
+
 
     </div>
+
 )
 
 export default Objectives

@@ -1,5 +1,5 @@
 import React from 'react';
-import { RaisedButton, Paper, TextField } from 'material-ui'
+import { Button, Paper, TextField } from 'material-ui'
 
 const style = {
     paper: {
@@ -13,17 +13,20 @@ const style = {
 const Login = () => (
     <div className="App">
         <Paper style={style.paper} zDepth={3}>
-            <TextField
-                id="email"
-                hintText="Email Address"
-            /><br />
-            <TextField
-                id="password"
-                hintText="Password"
-                type="password"
-            /><br />
+        <TextField
+          id="email"
+          label="Email Address"
+          margin="normal"
+        /><br />
+        <TextField
+          id="password-input"
+          label="Password"
+          type="password"
+          autoComplete="current-password"
+          margin="normal"
+        /><br />
 
-            <RaisedButton label="Log in" />
+            <Button variant="raised" color="primary">Log In</Button>
         </Paper>
 
     </div>
