@@ -12,26 +12,9 @@ import { ListItem, ListItemText, ListItemIcon } from 'material-ui/List';
 import Logout from '../dialogs/Logout'
 
 const styles = theme => ({
-    root: {
-      flexGrow: 1,
-      height: 430,
-      zIndex: 1,
-      overflow: 'hidden',
-      position: 'relative',
-      display: 'flex',
-    },
-    appBar: {
-      zIndex: theme.zIndex.drawer + 1,
-    },
     drawerPaper: {
       position: 'relative',
       width: 240,
-    },
-    content: {
-      flexGrow: 1,
-      backgroundColor: theme.palette.background.default,
-      padding: theme.spacing.unit * 3,
-      minWidth: 0, // So the Typography noWrap works
     },
     toolbar: theme.mixins.toolbar,
   });
@@ -58,9 +41,10 @@ class NavDrawer extends React.Component {
     handleToggle = () => this.setState({ open: !this.state.open });
 
     render() {
-        var classes = this.props;
+        const { classes } = this.props;
         return (
             <Drawer variant="permanent" classes={{paper: classes.drawerPaper}}>
+        <div className={classes.toolbar} />
 
                 <MenuItem component="a" href="/classes">
                     <ListItemIcon><School/></ListItemIcon>

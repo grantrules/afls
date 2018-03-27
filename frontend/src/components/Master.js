@@ -13,11 +13,20 @@ import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 
+const drawerWidth = 240;
 
-const styles = {
+
+const styles = theme => ({
     root: {
-      flexGrow: 1,
-    },
+        flexGrow: 1,
+        zIndex: 1,
+        overflow: 'hidden',
+        position: 'relative',
+        display: 'flex',
+      },
+      appBar: {
+        zIndex: theme.zIndex.drawer + 1,
+      },
     flex: {
       flex: 1,
     },
@@ -25,15 +34,19 @@ const styles = {
       marginLeft: -12,
       marginRight: 20,
     },
-  };
+    content: {
+        flexGrow: 1,
+        backgroundColor: theme.palette.background.default,
+        padding: theme.spacing.unit * 3,
+        minWidth: 0, // So the Typography noWrap works
+      },
+      toolbar: theme.mixins.toolbar,
+
+  });
 
 class Master extends Component {
     /*
-        constructor(props, context) {
-            super(props, context)
-    
-            this.muiTheme = getMuiTheme({
-                palette: {
+       
                     
                     //primary1Color: colors.indigo[300],
                     //primary2Color: colors.indigo[300],
@@ -44,25 +57,17 @@ class Master extends Component {
                     //accent1Color: colors.pinkA200,
                     //accent2Color: colors.pinkA400,
                     //accent3Color: colors.pinkA100,
-                    userAgent: props.userAgent
-                }
-            })
-    
-        }
-    
-    
-                    //<MuiThemeProvider muiTheme={this.muiTheme}>
-    
     */
     render() {
         const { classes } = this.props;
 
         return (
-
             <MuiThemeProvider>
+                <div className={classes.root}>
+
                 <CssBaseline />
 
-                <AppBar position="static">
+                <AppBar position="absolute" className={classes.appBar}>
                     <Toolbar>
                         <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
                             <MenuIcon />
@@ -76,10 +81,12 @@ class Master extends Component {
 
                 <NavDrawer />
 
-                <div style={{ marginLeft: 260 }}>
+                <main className={classes.content} >
+                    <div className={classes.toolbar} />
 
                     {this.props.children}
 
+                </main>
                 </div>
 
             </MuiThemeProvider>
