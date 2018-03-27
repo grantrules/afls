@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ListItem } from 'material-ui/List';
+import List, { ListItem, ListItemText } from 'material-ui/List';
 import ActionGrade from 'material-ui-icons/Grade';
 import Divider from 'material-ui/Divider';
 import Avatar from 'material-ui/Avatar';
@@ -7,7 +7,7 @@ import pink from 'material-ui/colors/pink';
 import common from 'material-ui/colors/common';
 
 
-import FloatingActionButton from 'material-ui/FloatingActionButton';
+import Button from 'material-ui/Button';
 import ContentAdd from 'material-ui-icons/Add';
 
 const pinkA200 = pink.A200;
@@ -24,54 +24,50 @@ const style = {
 const Students = () => (
     <div className="app">
     <List>
-        <ListItem
-            primaryText="Chelsea Otakan"
-            leftIcon={<ActionGrade color={pinkA200} />}
-        />
-        <ListItem
-            primaryText="Eric Hoffman"
-            insetChildren={true}
-        />
-        <ListItem
-            primaryText="James Anderson"
-            insetChildren={true}
-        />
-        <ListItem
-            primaryText="Kerem Suer"
-            insetChildren={true}
-        />
+        <ListItem>
+            <Avatar>
+                <ActionGrade color={pinkA200}/>
+            </Avatar>
+            <ListItemText primary="Chelsea Otakan"/>
+        </ListItem>
+        <ListItem>
+            <ListItemText primary="Eric Hoffman"/>
+        </ListItem>
+        <ListItem>
+            <ListItemText primary="James Anderson"/>
+        </ListItem>
+        <ListItem>
+            <ListItemText primary="Kerem Suer"/>
+        </ListItem>
     </List>
     <Divider inset={true} />
     <List>
-        <ListItem
-            primaryText="Adelle Charles"
-            leftAvatar={
-                <Avatar
+        <ListItem>
+        <Avatar
                     color={pinkA200} backgroundColor={transparent}
                     style={{ left: 8 }}
                 >
                     A
           </Avatar>
-            }
-        />
-        <ListItem
-            primaryText="Adham Dannaway"
-            insetChildren={true}
-        />
-        <ListItem
-            primaryText="Allison Grayce"
-            insetChildren={true}
-        />
-        <ListItem
-            primaryText="Angel Ceballos"
-            insetChildren={true}
-        />
+            <ListItemText primary="Chelsea Otakan"/>
+        </ListItem>
+
+        <ListItem>
+            <ListItemText primary="Adam Adannaway"/>
+        </ListItem>
+        <ListItem>
+            <ListItemText primary="Allie Grace"/>
+        </ListItem>
+        <ListItem>
+            <ListItemText primary="Angel Cuervas"/>
+        </ListItem>
     </List>
 
 
-    <FloatingActionButton style={style.button} secondary={true}>
-          <ContentAdd />
-        </FloatingActionButton>
+    <Button variant="fag" style={style.button} secondary={true}>
+        <ContentAdd />
+    </Button>
+
 
     </div>
 
