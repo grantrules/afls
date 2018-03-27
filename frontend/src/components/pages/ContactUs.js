@@ -19,12 +19,12 @@ const ContactUs = () => (
 
             <TextField
             id="name"
-            label="Name"
+            label="Your Name"
             margin="normal"
             /><br />
             <TextField
             id="email"
-            label="Email Address"
+            label="Your Email"
             margin="normal"
             /><br />
             <FormControl fullWidth>
@@ -37,7 +37,7 @@ const ContactUs = () => (
                 /><br />
             </FormControl>
 
-            <Button variant="raised" color="primary">Send</Button>
+            <Button variant="raised" color="secondary">Send</Button>
         </Paper>
 
     </div>

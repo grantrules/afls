@@ -25,11 +25,11 @@ class Logout extends React.Component {
           Are you sure you want to log out?
         </DialogContent>
         <DialogActions>
-          <Button onClick={close} color="primary">
-            No
-          </Button>
-          <Button onClick={close} color="primary">
+          <Button onClick={close} color="secondary">
             Yes
+          </Button>
+          <Button onClick={close} variant="raised" color="secondary">
+            No
           </Button>
         </DialogActions>
       </Dialog>
