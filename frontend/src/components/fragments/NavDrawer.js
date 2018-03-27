@@ -1,10 +1,10 @@
 import React from 'react';
 import { Drawer, MenuItem, Divider, AppBar } from 'material-ui'
-import School from 'material-ui/svg-icons/social/school';
-import Group from 'material-ui/svg-icons/social/group'
-import Chart from 'material-ui/svg-icons/editor/insert-chart'
-import AssignmentTurnedIn from 'material-ui/svg-icons/action/assignment-turned-in'
-import Exit from 'material-ui/svg-icons/action/exit-to-app'
+import School from 'material-ui-icons/School';
+import Group from 'material-ui-icons/Group'
+import Chart from 'material-ui-icons/InsertChart'
+import AssignmentTurnedIn from 'material-ui-icons/AssignmentTurnedIn'
+import Exit from 'material-ui-icons/ExitToApp'
 
 import Logout from '../dialogs/Logout'
 

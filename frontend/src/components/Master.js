@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { MuiThemeProvider, getMuiTheme } from 'material-ui/styles'
 import { colors } from 'material-ui/styles'
+
 import { RaisedButton, AppBar, IconButton } from 'material-ui'
-import Home from 'material-ui/svg-icons/action/assignment';
+import Home from 'material-ui-icons/Assignment';
 import NavDrawer from './fragments/NavDrawer'
 
 
@@ -13,12 +14,13 @@ class Master extends Component {
 
         this.muiTheme = getMuiTheme({
             palette: {
-                primary1Color: colors.indigo300,
-                primary2Color: colors.indigo300,
-                primary3Color: colors.grey600,
-                accent1Color: colors.cyanA700,
-                accent2Color: colors.cyanA200,
-                accent3Color: colors.cyanA100,
+                /*
+                primary1Color: colors.indigo[300],
+                primary2Color: colors.indigo[300],
+                primary3Color: colors.grey.A600,
+                accent1Color: colors.cyan.A700,
+                accent2Color: colors.cyan.A200,
+                accent3Color: colors.cyan.A100,
                 /*
                 accent1Color: colors.pinkA200,
                 accent2Color: colors.pinkA400,

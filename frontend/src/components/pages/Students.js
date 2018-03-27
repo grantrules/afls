@@ -1,13 +1,17 @@
 import React from 'react';
 import { List, ListItem } from 'material-ui/List';
-import ActionGrade from 'material-ui/svg-icons/action/grade';
+import ActionGrade from 'material-ui-icons/Grade';
 import Divider from 'material-ui/Divider';
 import Avatar from 'material-ui/Avatar';
-import { pinkA200, transparent } from 'material-ui/styles/colors';
+import pink from 'material-ui/colors/pink';
+import common from 'material-ui/colors/common';
+
 
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add';
+import ContentAdd from 'material-ui-icons/Add';
 
+const pinkA200 = pink.A200;
+const transparent = common.transparent;
 
 const style = {
     button: {
@@ -73,4 +77,4 @@ const Students = () => (
 
     )
 
-    export default Students
+export default Students
