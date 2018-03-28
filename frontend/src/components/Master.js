@@ -22,6 +22,7 @@ import indigo from 'material-ui/colors/indigo';
 import pink from 'material-ui/colors/pink';
 import { darken } from 'material-ui/styles/colorManipulator';
 import withWidth, { isWidthUp } from 'material-ui/utils/withWidth';
+import Authorized from '../auth/Authorized'
 
 
 //const drawerWidth = 240;
@@ -119,9 +120,11 @@ class Master extends Component {
                     </Toolbar>
                 </AppBar>
 
+                <Authorized>
                 {navDrawer(location.pathname) &&
                     <NavDrawer open={this.state.navDrawerOpen} close={this.closeNavDrawer}/>
                 }
+                </Authorized>
 
                 <main className={classes.content} >
                     <div className={classes.toolbar} />
