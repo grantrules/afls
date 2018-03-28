@@ -47,7 +47,7 @@ const Objectives = () => (
             <Divider inset={true} />
         </List>
 
-        <Button variant="fag" style={style.button}>
+        <Button variant="fab" style={style.button} color="secondary">
             <ContentAdd />
         </Button>
 

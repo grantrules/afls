@@ -64,7 +64,7 @@ const Students = () => (
     </List>
 
 
-    <Button variant="fag" style={style.button} secondary={true}>
+    <Button variant="fab" style={style.button} color="secondary">
         <ContentAdd />
     </Button>
 

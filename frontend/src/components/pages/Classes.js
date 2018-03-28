@@ -28,7 +28,7 @@ const Classes = () => (
 
         </List>
 
-        <Button variant="fag" style={style.button}>
+        <Button variant="fab" style={style.button} color="secondary">
             <ContentAdd />
         </Button>
 
