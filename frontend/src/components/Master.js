@@ -98,11 +98,14 @@ class Master extends Component {
 
                 <AppBar position="absolute" className={classes.appBar}>
                     <Toolbar>
+                    {navDrawer(location.pathname) &&
+
                         <Hidden smUp>
                         <IconButton onClick={this.openNavDrawer} className={classes.menuButton} color="inherit" aria-label="Menu">
                             <MenuIcon />
                         </IconButton>
                         </Hidden>
+                    }
                         <Typography variant="title" color="inherit" className={classes.flex}>
                             AFLS-OMG
                         </Typography>
@@ -110,7 +113,7 @@ class Master extends Component {
                     </Toolbar>
                 </AppBar>
 
-                {navDrawer(location.pathName) &&
+                {navDrawer(location.pathname) &&
                     <NavDrawer open={this.state.navDrawerOpen}/>
                 }
 
