@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormControl, Button, Paper, TextField, Typography } from 'material-ui'
+import { Button, TextField } from 'material-ui'
 import Dialog, { DialogActions, DialogContent, DialogTitle } from 'material-ui/Dialog';
 
 import Slide from 'material-ui/transitions/Slide';
