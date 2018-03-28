@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { MuiThemeProvider } from 'material-ui/styles'
 
+import { withRouter } from 'react-router'
+
+
 import { CssBaseline, Button, AppBar } from 'material-ui'
 //import Home from 'material-ui-icons/Assignment';
 import NavDrawer from './fragments/NavDrawer'
@@ -59,22 +62,16 @@ const styles = theme => ({
 
   });
 
+// these correspond to route paths, not the actual urls
+const noNavDrawer = ['/', '/login', '/contact-us']
+
+const navDrawer = path => typeof noNavDrawer.find(e => path === e) === "undefined"
+
+
 class Master extends Component {
-    /*
-       
-                    
-                    //primary1Color: colors.indigo[300],
-                    //primary2Color: colors.indigo[300],
-                    //primary3Color: colors.grey.A600,
-                    //accent1Color: colors.cyan.A700,
-                    //accent2Color: colors.cyan.A200,
-                    //accent3Color: colors.cyan.A100,
-                    //accent1Color: colors.pinkA200,
-                    //accent2Color: colors.pinkA400,
-                    //accent3Color: colors.pinkA100,
-    */
+
     render() {
-        const { classes } = this.props;
+        const { classes, match } = this.props;
 
         return (
             <MuiThemeProvider theme={theme}>
@@ -96,7 +93,10 @@ class Master extends Component {
                     </Toolbar>
                 </AppBar>
 
+                {navDrawer(match.path) &&
                     <NavDrawer />
+                }
+
                 <main className={classes.content} >
                     <div className={classes.toolbar} />
 
@@ -110,4 +110,4 @@ class Master extends Component {
     }
 }
 
-export default withStyles(styles)(Master)
+export default withRouter(withStyles(styles)(Master))

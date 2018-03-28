@@ -1,7 +1,6 @@
 import React from 'react'
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Divider from 'material-ui/Divider'
-import indigo from 'material-ui/colors/indigo';
 import Button from 'material-ui/Button';
 import ContentAdd from 'material-ui-icons/Add';
 
