@@ -6,11 +6,6 @@ import Master from './components/Master'
 import Routes from './Routes'
 import Auth from './auth/Auth'
 
-
-
-import './App.css';
-
-
 class App extends Component {
 
   render() {
