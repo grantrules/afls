@@ -13,10 +13,12 @@ class LoginFrag extends Component {
 
     render() {
         return (
+        <div>
             <Button color="inherit" onClick={this.toggle}>
                 Login
-                <Login open={this.state.login} close={this.toggle} />
             </Button>
+            <Login open={this.state.login} close={this.toggle} />
+        </div>
         );
     }
 }
