@@ -6,11 +6,15 @@ import Master from './components/Master'
 import Routes from './Routes'
 import Auth from './auth/Auth'
 
+import loginProvider from './auth/loginProvider'
+
+const login = new loginProvider()
+
 class App extends Component {
 
   render() {
     return (
-      <Auth>
+      <Auth provider={login}>
         <BrowserRouter>
           <Master>
             <Routes />

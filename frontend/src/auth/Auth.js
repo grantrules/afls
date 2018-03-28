@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 class Auth extends React.Component {
 
     getChildContext() {
-        return { anonymous: true }
+        return { anonymous: true, provider: this.props.provider }
     }
 
     render() {
@@ -16,11 +16,23 @@ class Auth extends React.Component {
 
 }
 
+Auth.propTypes = {
+    /**
+     * Login provider
+     */
+    provider: PropTypes.object,
+}
+
 Auth.childContextTypes = {
     /**
      * Current state of authorization
      */
     anonymous: PropTypes.bool,
+
+    /**
+     * Login provider
+     */
+    provider: PropTypes.object,
 }
 
 export default Auth
