@@ -32,12 +32,12 @@ const Index = (props) => {
                 <img src="/afls.jpg" alt="afls books" style={{width: "100%"}} />
                 </Grid>
                 <Grid item xs={6}>
-                <Typography variant="body1">
-                    
-                    <p>Hello, This is objective mastery grading software for Assessment of Functional Living Skills</p>
-                    <p>Do your school use these books and need a digital solution to grading?</p>
+                    <Typography variant="body1">
+                        Hello, This is objective mastery grading software for Assessment of Functional Living Skills
+                    </Typography>
 
-                    
+                    <Typography variant="body1">
+                        Do your school use these books and need a digital solution to grading?
                     </Typography>
                     <Button  align="center" variant="raised" className={classes.button} component="a" href="/contact-us" color="secondary">Contact Us</Button>
 
