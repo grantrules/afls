@@ -2,6 +2,12 @@ import React from 'react';
 import { FormControl, Button, Paper, TextField, Typography } from 'material-ui'
 import Dialog, { DialogActions, DialogContent, DialogTitle } from 'material-ui/Dialog';
 
+import Slide from 'material-ui/transitions/Slide';
+
+
+function Transition(props) {
+    return <Slide direction="up" {...props} />;
+}
 
 const Login = (props) => {
 
@@ -15,6 +21,7 @@ const Login = (props) => {
         open={open}
         maxWidth="md"
         aria-labelledby="login-dialog-title"
+        transition={Transition}
       >
         <DialogTitle id="login-dialog-title">Log In</DialogTitle>
         <DialogContent>
