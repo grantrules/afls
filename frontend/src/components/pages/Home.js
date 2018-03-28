@@ -25,24 +25,19 @@ const Home = (props) => {
     
     return (
 
-        <div className="App">
-            <Paper className={classes.paper}>
-                <Grid container>
-                <Grid item xs={6}>
-                <img src="/afls.jpg" alt="afls books" style={{width: "100%"}} />
-                </Grid>
-                <Grid item xs={6}>
+        <Paper className={classes.paper}>
+            <Grid container>
+            <Grid item xs={6}>
+            <img src="/afls.jpg" alt="afls books" style={{width: "100%"}} />
+            </Grid>
+            <Grid item xs={6}>
                 <Typography variant="body1">
-                    
-                    <p>Welcome to AFLS-OMG</p>
-                    
-                    </Typography>
+                    Welcome to AFLS-OMG
+                </Typography>
+            </Grid>
+            </Grid>
+        </Paper>
 
-                </Grid>
-                </Grid>
-            </Paper>
-
-        </div>
     )
 }
 
