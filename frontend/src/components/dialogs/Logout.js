@@ -14,9 +14,8 @@ class Logout extends React.Component {
 
 
     <Dialog
-        open={this.props.open}
-        disableBackdropClick
-        disableEscapeKeyDown
+        onClose={close}
+        open={this.props.open}        
         maxWidth="xs"
         aria-labelledby="confirmation-dialog-title"
       >
