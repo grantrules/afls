@@ -25,6 +25,7 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleEmail = this.handleEmail.bind(this)
     this.handlePassword = this.handlePassword.bind(this)
+    this.close = this.close.bind(this)
 
     this.state = {recentFail: false}
   }
@@ -55,13 +56,19 @@ class Login extends React.Component {
       this.setState({recentFail: true})
     } else {
       // success
+      this.setState({recentFail: false})
     }
+  }
+
+  close() {
+    this.setState({recentFail: false})
+    this.props.close()
   }
 
 
   render() {
 
-    let { close, open } = this.props;
+    let { open } = this.props;
 
     const dialogAnim = (this.state.recentFail && styles.dialog) || {};
 
@@ -69,7 +76,7 @@ class Login extends React.Component {
 
 
     <Dialog
-        onClose={close}
+        onClose={this.close}
         open={open}
         maxWidth="md"
         aria-labelledby="login-dialog-title"
@@ -99,7 +106,7 @@ class Login extends React.Component {
           <Button onClick={this.handleSubmit} variant="raised" color="secondary">
             Log In
           </Button>
-          <Button onClick={close} color="secondary">
+          <Button onClick={this.close} color="secondary">
             Cancel
           </Button>
         </DialogActions>
