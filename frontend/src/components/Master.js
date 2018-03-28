@@ -71,7 +71,7 @@ const navDrawer = path => typeof noNavDrawer.find(e => path === e) === "undefine
 class Master extends Component {
 
     render() {
-        const { classes, match } = this.props;
+        const { classes, location } = this.props;
 
         return (
             <MuiThemeProvider theme={theme}>
@@ -93,7 +93,7 @@ class Master extends Component {
                     </Toolbar>
                 </AppBar>
 
-                {navDrawer(match.path) &&
+                {navDrawer(location.pathName) &&
                     <NavDrawer />
                 }
 

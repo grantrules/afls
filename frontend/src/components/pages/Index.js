@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper, Typography, Grid } from 'material-ui'
+import { Paper, Button, Typography, Grid } from 'material-ui'
 import { withStyles } from 'material-ui/styles';
 
 
@@ -19,7 +19,7 @@ const styles = {
       },
 }
 
-const Home = (props) => {
+const Index = (props) => {
 
     const { classes } = props;
     
@@ -34,9 +34,12 @@ const Home = (props) => {
                 <Grid item xs={6}>
                 <Typography variant="body1">
                     
-                    <p>Welcome to AFLS-OMG</p>
+                    <p>Hello, This is objective mastery grading software for Assessment of Functional Living Skills</p>
+                    <p>Do your school use these books and need a digital solution to grading?</p>
+
                     
                     </Typography>
+                    <Button  align="center" variant="raised" className={classes.button} component="a" href="/contact-us" color="secondary">Contact Us</Button>
 
                 </Grid>
                 </Grid>
@@ -46,4 +49,4 @@ const Home = (props) => {
     )
 }
 
-export default withStyles(styles)(Home)
+export default withStyles(styles)(Index)
