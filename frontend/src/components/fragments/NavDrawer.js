@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import { Drawer, MenuItem, Divider } from 'material-ui'
+import { Typography, Drawer, MenuItem, Divider } from 'material-ui'
 import { School, Group, AssignmentTurnedIn, ExitToApp, InsertChart as Chart } from 'material-ui-icons';
 import { withStyles } from 'material-ui/styles';
 import withWidth, { isWidthUp } from 'material-ui/utils/withWidth';
@@ -19,7 +19,20 @@ const styles = theme => ({
     drawerPaperSm: {
         width: 240,
     },
-    toolbar: theme.mixins.toolbar,
+    title: {
+        color: theme.palette.text.secondary,
+        '&:hover': {
+          color: theme.palette.primary.main,
+        },
+      },
+    toolbar: {
+        ...theme.mixins.toolbar,
+        paddingLeft: theme.spacing.unit * 3,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+    }
   });
 
 
@@ -37,51 +50,62 @@ class NavDrawer extends React.Component {
     closeLogout = () => this.setState({ logout: false })
 
     render() {
-        const { width, classes, open } = this.props;
+        const { width, classes, open, close } = this.props;
         const showDrawer = isWidthUp("sm", width);
 
+        var logout = () => { this.openLogout(); close() }
+
         return (
+            <nav>
+
             <Drawer
                 variant={(showDrawer && "permanent") || "temporary"}
                 open={showDrawer || open}
-                classes={{paper: (showDrawer && classes.drawerPaper) || classes.drawerPaperSm}}>
+                classes={{paper: (showDrawer && classes.drawerPaper) || classes.drawerPaperSm}}
+                onClose={close}>
        
-       
-                <div className={classes.toolbar} />
+                <div  className={classes.toolbar}>
+                <Typography variant="title">
+                <Link to="/home" className={classes.title} onClick={close}>AFLS-OMG</Link>
+                </Typography>
+                </div>
 
-                <MenuItem component={Link} to="/classes">
+                <MenuItem component={Link} to="/classes" onClick={close}>
                     <ListItemIcon><School/></ListItemIcon>
                     <ListItemText primary="Classes"/>
                 </MenuItem>
 
-                <MenuItem component={Link} to="/objectives">
+                <MenuItem component={Link} to="/objectives" onClick={close}>
                     <ListItemIcon><AssignmentTurnedIn/></ListItemIcon>
                     <ListItemText primary="Objectives"/>
                 </MenuItem>
                 
-                <MenuItem component={Link} to="/students">
+                <MenuItem component={Link} to="/students"  onClick={close}>
                     <ListItemIcon><Group/></ListItemIcon>
                     <ListItemText primary="Students"/>
                 </MenuItem>
 
                 <Divider inset={true} />
 
-                <MenuItem component={Link} to="#">
+                <MenuItem component={Link} to="#"  onClick={close}>
                     <ListItemIcon><Chart/></ListItemIcon>
                     <ListItemText primary="Reports"/>
                 </MenuItem>
 
 
                 <MenuItem 
-                    onClick={this.openLogout}
+                    onClick={logout}
                     style={{ position: "fixed", bottom: 0, width: '100%' }}>
                     <ListItemIcon><ExitToApp /></ListItemIcon>
                     <ListItemText primary="Logout"/>
                 </MenuItem>
 
-                <Logout open={this.state.logout} close={this.closeLogout} />
 
             </Drawer>
+            
+            <Logout open={this.state.logout} close={this.closeLogout} />
+
+            </nav>
         );
     }
 }

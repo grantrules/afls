@@ -83,9 +83,11 @@ class Master extends Component {
         this.setState({navDrawerOpen: true })
     }
 
+    closeNavDrawer = () => this.state.navDrawerOpen && this.setState({navDrawerOpen: false })
+
     componentWillReceiveProps(nextProps) {
         if (isWidthUp("sm", nextProps.width) && this.state.navDrawerOpen) {
-            this.setState({navDrawerOpen: false});
+            this.closeNavDrawer()
         }
     }
 
@@ -118,7 +120,7 @@ class Master extends Component {
                 </AppBar>
 
                 {navDrawer(location.pathname) &&
-                    <NavDrawer open={this.state.navDrawerOpen}/>
+                    <NavDrawer open={this.state.navDrawerOpen} close={this.closeNavDrawer}/>
                 }
 
                 <main className={classes.content} >
