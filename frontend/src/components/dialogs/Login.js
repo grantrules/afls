@@ -86,6 +86,7 @@ class Login extends React.Component {
         <DialogTitle id="login-dialog-title">Log In</DialogTitle>
         <DialogContent>
             <TextField
+                autoFocus
                 onChange={this.handleEmail}
                 fullWidth
                 id="email"
