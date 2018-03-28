@@ -7,7 +7,7 @@ import { withRouter } from 'react-router'
 import { CssBaseline, Button, AppBar } from 'material-ui'
 //import Home from 'material-ui-icons/Assignment';
 import NavDrawer from './fragments/NavDrawer'
-import Login from './dialogs/Login'
+import LoginFrag from './fragments/LoginFrag'
 
 import { withStyles } from 'material-ui/styles';
 import Toolbar from 'material-ui/Toolbar';
@@ -75,12 +75,9 @@ class Master extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { navDrawerOpen: false, login: false };
+        this.state = { navDrawerOpen: false };
     }
 
-    openLogin = () => this.setState({ login: true })
-
-    closeLogin = () => this.setState({ login: false })
 
     openNavDrawer = () => {
         this.setState({navDrawerOpen: true })
@@ -114,8 +111,8 @@ class Master extends Component {
                         <Typography variant="title" color="inherit" className={classes.flex}>
                             AFLS-OMG
                         </Typography>
-                        <Button color="inherit" onClick={this.openLogin}>Login</Button>
-                        <Login open={this.state.login} close={this.closeLogin} />
+                        
+                        <LoginFrag/>
 
                     </Toolbar>
                 </AppBar>
