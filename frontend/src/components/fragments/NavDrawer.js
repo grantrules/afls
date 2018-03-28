@@ -2,11 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 import { Drawer, MenuItem, Divider } from 'material-ui'
-import School from 'material-ui-icons/School';
-import Group from 'material-ui-icons/Group'
-import Chart from 'material-ui-icons/InsertChart'
-import AssignmentTurnedIn from 'material-ui-icons/AssignmentTurnedIn'
-import Exit from 'material-ui-icons/ExitToApp'
+import { School, Group, AssignmentTurnedIn, ExitToApp, InsertChart as Chart } from 'material-ui-icons';
 import { withStyles } from 'material-ui/styles';
 import withWidth, { isWidthUp } from 'material-ui/utils/withWidth';
 
@@ -29,28 +25,19 @@ const styles = theme => ({
 
 class NavDrawer extends React.Component {
 
+    
+
     constructor(props) {
         super(props);
-        this.state = { open: true, logout: false };
+        this.state = { logout: false };
     }
-
-    state = {
-        open: true,
-        logout: false,
-    };
-
-
 
     openLogout = () => this.setState({ logout: true })
 
     closeLogout = () => this.setState({ logout: false })
 
-    handleToggle = () => this.setState({ open: !this.state.open });
-
     render() {
-        const { width, classes } = this.props;
-        const { open } = this.state;
-
+        const { width, classes, open } = this.props;
         const showDrawer = isWidthUp("sm", width);
 
         return (
@@ -60,7 +47,7 @@ class NavDrawer extends React.Component {
                 classes={{paper: (showDrawer && classes.drawerPaper) || classes.drawerPaperSm}}>
        
        
-                 <div className={classes.toolbar} />
+                <div className={classes.toolbar} />
 
                 <MenuItem component={Link} to="/classes">
                     <ListItemIcon><School/></ListItemIcon>
@@ -72,7 +59,6 @@ class NavDrawer extends React.Component {
                     <ListItemText primary="Objectives"/>
                 </MenuItem>
                 
-
                 <MenuItem component={Link} to="/students">
                     <ListItemIcon><Group/></ListItemIcon>
                     <ListItemText primary="Students"/>
@@ -89,7 +75,7 @@ class NavDrawer extends React.Component {
                 <MenuItem 
                     onClick={this.openLogout}
                     style={{ position: "fixed", bottom: 0, width: '100%' }}>
-                    <ListItemIcon><Exit /></ListItemIcon>
+                    <ListItemIcon><ExitToApp /></ListItemIcon>
                     <ListItemText primary="Logout"/>
                 </MenuItem>
 

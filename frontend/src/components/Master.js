@@ -20,6 +20,7 @@ import Hidden from 'material-ui/Hidden';
 import indigo from 'material-ui/colors/indigo';
 import pink from 'material-ui/colors/pink';
 import { darken } from 'material-ui/styles/colorManipulator';
+import withWidth, { isWidthUp } from 'material-ui/utils/withWidth';
 
 
 //const drawerWidth = 240;
@@ -67,8 +68,24 @@ const noNavDrawer = ['/', '/login', '/contact-us']
 
 const navDrawer = path => typeof noNavDrawer.find(e => path === e) === "undefined"
 
-
 class Master extends Component {
+
+    
+
+    constructor(props) {
+        super(props);
+        this.state = { navDrawerOpen: false };
+    }
+
+    openNavDrawer = () => {
+        this.setState({navDrawerOpen: true })
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (isWidthUp("sm", nextProps.width) && this.state.navDrawerOpen) {
+            this.setState({navDrawerOpen: false});
+        }
+    }
 
     render() {
         const { classes, location } = this.props;
@@ -82,7 +99,7 @@ class Master extends Component {
                 <AppBar position="absolute" className={classes.appBar}>
                     <Toolbar>
                         <Hidden smUp>
-                        <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                        <IconButton onClick={this.openNavDrawer} className={classes.menuButton} color="inherit" aria-label="Menu">
                             <MenuIcon />
                         </IconButton>
                         </Hidden>
@@ -94,7 +111,7 @@ class Master extends Component {
                 </AppBar>
 
                 {navDrawer(location.pathName) &&
-                    <NavDrawer />
+                    <NavDrawer open={this.state.navDrawerOpen}/>
                 }
 
                 <main className={classes.content} >
@@ -110,4 +127,4 @@ class Master extends Component {
     }
 }
 
-export default withRouter(withStyles(styles)(Master))
+export default withRouter(withWidth()(withStyles(styles)(Master)))
