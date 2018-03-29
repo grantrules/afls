@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, TextField } from 'material-ui'
 import Dialog, { DialogActions, DialogContent, DialogTitle } from 'material-ui/Dialog';
 import Slide from 'material-ui/transitions/Slide';
-import PropTypes from 'prop-types'
 import withAuth from '../../auth/withAuth'
 
 

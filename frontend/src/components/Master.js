@@ -4,7 +4,7 @@ import { MuiThemeProvider } from 'material-ui/styles'
 import { withRouter } from 'react-router'
 
 
-import { CssBaseline, Button, AppBar } from 'material-ui'
+import { CssBaseline, AppBar } from 'material-ui'
 //import Home from 'material-ui-icons/Assignment';
 import NavDrawer from './fragments/NavDrawer'
 import LoginFrag from './fragments/LoginFrag'

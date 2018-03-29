@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types'
 import Dialog, { DialogActions, DialogContent, DialogTitle } from 'material-ui/Dialog';
 import Button from 'material-ui/Button';
 import Slide from 'material-ui/transitions/Slide';

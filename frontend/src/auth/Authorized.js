@@ -48,10 +48,6 @@ Authorized.contextTypes = {
 }
 
 Authorized.propTypes = {
-    /**
-     * The content of the component.
-     */
-    children: PropTypes.node,
 
     /**
      * If true, will display contents when user is not logged in.
