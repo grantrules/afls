@@ -56,12 +56,12 @@ class Login extends React.Component {
       this.setState({recentFail: true})
     } else {
       // success
-      this.close(false)
+      this.close()
     }
   }
 
-  close(fail) {
-    this.setState({recentFail: !!fail})
+  close() {
+    this.setState({recentFail: false})
     this.props.close()
   }
 
