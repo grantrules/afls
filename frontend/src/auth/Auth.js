@@ -12,7 +12,7 @@ class Auth extends React.Component {
         this.loginCallback = this.loginCallback.bind(this)
         this.logoutCallback = this.logoutCallback.bind(this)
 
-        this.state = { anonymous: true }
+        this.state = { anonymous: true, user: false }
     }
 
     /**
