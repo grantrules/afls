@@ -30,7 +30,7 @@ const ContactUs = () => (
             <FormControl fullWidth>
                 <TextField
                 id="textarea"
-                label="Questions or comments? Let us know!"
+                label="Questions or comments?"
                 placeholder="Message"
                 multiline
                 margin="normal"
