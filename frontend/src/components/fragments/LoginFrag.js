@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button  } from 'material-ui'
 import Login from '../dialogs/Login'
+import Authorized from '../../auth/Authorized'
 
 class LoginFrag extends Component {
 
@@ -13,12 +14,15 @@ class LoginFrag extends Component {
 
     render() {
         return (
-        <div>
-            <Button color="inherit" onClick={this.toggle}>
-                Login
-            </Button>
-            <Login open={this.state.login} close={this.toggle} />
-        </div>
+            <div>
+                <Authorized anonymous>
+                    <Button color="inherit" onClick={this.toggle}>
+                        Login
+                    </Button>
+                </Authorized>
+
+                <Login open={this.state.login} close={this.toggle} />
+            </div>
         );
     }
 }
