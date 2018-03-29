@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import Dialog, { DialogActions, DialogContent, DialogTitle } from 'material-ui/Dialog';
 import Button from 'material-ui/Button';
 import Slide from 'material-ui/transitions/Slide';
@@ -13,8 +14,18 @@ function Transition(props) {
  */
 class Logout extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.handleLogout = this.handleLogout.bind(this)
+  }
+
+    handleLogout() {
+      this.context.provider.logout()
+      this.props.close()
+    }
+
     render() {
-        let close = this.props.close;
+        let close = this.props.close
 
         return (
 
@@ -31,7 +42,7 @@ class Logout extends React.Component {
           Are you sure you want to log out?
         </DialogContent>
         <DialogActions>
-          <Button onClick={close} color="secondary">
+          <Button onClick={this.handleLogout} color="secondary">
             Yes
           </Button>
           <Button onClick={close} variant="raised" color="secondary">
@@ -41,6 +52,13 @@ class Logout extends React.Component {
       </Dialog>
         );
     }
+}
+
+Logout.contextTypes = {
+  /**
+   * Login provider
+   */
+  provider: PropTypes.object,
 }
 
 export default Logout
