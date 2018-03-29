@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Dialog, { DialogActions, DialogContent, DialogTitle } from 'material-ui/Dialog';
 import Button from 'material-ui/Button';
 import Slide from 'material-ui/transitions/Slide';
+import withAuth from '../../auth/withAuth'
 
 
 function Transition(props) {
@@ -10,7 +11,7 @@ function Transition(props) {
 }
 
 /**
- * A modal dialog can only be closed by selecting one of the actions.
+ * Logout dialog
  */
 class Logout extends React.Component {
 
@@ -20,7 +21,7 @@ class Logout extends React.Component {
   }
 
     handleLogout() {
-      this.context.provider.logout()
+      this.props.provider.logout()
       this.props.close()
     }
 
@@ -54,11 +55,5 @@ class Logout extends React.Component {
     }
 }
 
-Logout.contextTypes = {
-  /**
-   * Login provider
-   */
-  provider: PropTypes.object,
-}
 
-export default Logout
+export default withAuth(Logout)

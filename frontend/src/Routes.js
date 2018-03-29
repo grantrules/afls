@@ -31,7 +31,6 @@ const Routes = () => (
                 <Route exact path="/objectives" component={Objectives} />
                 <Route exact path="/students" component={Students} />
                 <Route exact path="/classes" component={Classes} />
-
             </Switch>
         </Authorized>
     </div>

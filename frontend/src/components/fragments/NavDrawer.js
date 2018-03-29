@@ -35,7 +35,9 @@ const styles = theme => ({
     }
   });
 
-
+/**
+ * NavDrawer fragment
+ */
 class NavDrawer extends React.Component {
 
     

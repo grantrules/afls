@@ -65,14 +65,13 @@ const styles = theme => ({
 
   });
 
-// these correspond to route paths, not the actual urls
-const noNavDrawer = ['/', '/login', '/contact-us']
+// included routes must specify exact
+const noNavDrawer = ['/', '/contact-us']
 
 const navDrawer = path => typeof noNavDrawer.find(e => path === e) === "undefined"
 
 class Master extends Component {
 
-    
 
     constructor(props) {
         super(props);

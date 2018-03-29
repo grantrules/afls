@@ -20,7 +20,7 @@ class Auth extends React.Component {
      */
     loginCallback(user, next) {
         if (user) {
-            this.setState({anonymous: false})
+            this.setState({anonymous: false, user: user})
         }
         if (next) next(user)
     }
@@ -29,7 +29,7 @@ class Auth extends React.Component {
      * Logout callback, called by provider
      */
     logoutCallback(next) {
-        this.setState({anonymous: true})
+        this.setState({anonymous: true, user: false})
         if (next) next()
     }
 
@@ -39,7 +39,13 @@ class Auth extends React.Component {
     }
 
     getChildContext() {
-        return { anonymous: this.state.anonymous, provider: this.props.provider }
+        return { 
+            auth: { 
+                anonymous: this.state.anonymous,
+                provider: this.props.provider,
+                user: this.state.user
+            }
+        }
     }
 
     render() {
@@ -56,15 +62,22 @@ Auth.propTypes = {
 }
 
 Auth.childContextTypes = {
-    /**
-     * Current state of authorization
-     */
-    anonymous: PropTypes.bool,
+    auth: PropTypes.shape({
+        /**
+         * Current state of authorization
+         */
+        anonymous: PropTypes.bool,
 
-    /**
-     * Login provider
-     */
-    provider: PropTypes.object,
+        /**
+         * Logged in user information
+         */
+        user: PropTypes.object,
+
+        /**
+         * Login provider
+         */
+        provider: PropTypes.object,
+    })
 }
 
 export default Auth

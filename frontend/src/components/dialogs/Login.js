@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button, TextField } from 'material-ui'
 import Dialog, { DialogActions, DialogContent, DialogTitle } from 'material-ui/Dialog';
-
 import Slide from 'material-ui/transitions/Slide';
-
 import PropTypes from 'prop-types'
+import withAuth from '../../auth/withAuth'
+
 
 
 function Transition(props) {
@@ -17,6 +17,9 @@ const styles = {
   }
 }
 
+/**
+ * Login dialog
+ */
 class Login extends React.Component {
 
   constructor(props) {
@@ -48,7 +51,7 @@ class Login extends React.Component {
     event.preventDefault();
     this.setState({recentFail: false})
     const credentials = { email: this.state.email, password: this.state.password }
-    this.context.provider.login(credentials, this.loginCallback )
+    this.props.provider.login(credentials, this.loginCallback )
   }
 
   loginCallback(user) {
@@ -121,11 +124,4 @@ class Login extends React.Component {
       }
 }
 
-Login.contextTypes = {
-  /**
-   * Login provider
-   */
-  provider: PropTypes.object,
-}
-
-export default Login
+export default withAuth(Login)

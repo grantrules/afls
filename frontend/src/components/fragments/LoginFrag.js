@@ -3,6 +3,10 @@ import { Button  } from 'material-ui'
 import Login from '../dialogs/Login'
 import Authorized from '../../auth/Authorized'
 
+
+/**
+ * LoginFrag contains login button & dialog
+ */
 class LoginFrag extends Component {
 
     constructor(props) {
