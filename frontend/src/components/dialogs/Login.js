@@ -44,7 +44,8 @@ class Login extends React.Component {
         });
       }
 
-  handleSubmit() {
+  handleSubmit(event) {
+    event.preventDefault();
     this.setState({recentFail: false})
     const credentials = { email: this.state.email, password: this.state.password }
     this.context.provider.login(credentials, this.loginCallback )
@@ -74,7 +75,7 @@ class Login extends React.Component {
 
     return (
 
-
+      
     <Dialog
         onClose={this.close}
         open={open}
@@ -83,6 +84,7 @@ class Login extends React.Component {
         transition={Transition}
         PaperProps={{style:dialogAnim}}
       >
+        <form onSubmit={this.handleSubmit}>
         <DialogTitle id="login-dialog-title">Log In</DialogTitle>
         <DialogContent>
             <TextField
@@ -92,6 +94,7 @@ class Login extends React.Component {
                 id="email"
                 label="Email Address"
                 margin="normal"
+                required
                 /><br />
             <TextField
                 onChange={this.handlePassword}
@@ -101,16 +104,18 @@ class Login extends React.Component {
                 type="password"
                 autoComplete="current-password"
                 margin="normal"
+                required
                 />
         </DialogContent>
         <DialogActions>
-          <Button onClick={this.handleSubmit} variant="raised" color="secondary">
+          <Button variant="raised" color="secondary" type="submit">
             Log In
           </Button>
           <Button onClick={this.close} color="secondary">
             Cancel
           </Button>
         </DialogActions>
+        </form>
       </Dialog>
         );
       }
