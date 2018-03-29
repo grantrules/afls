@@ -1,6 +1,7 @@
 import React from 'react';
 import { Paper, Button, Typography, Grid } from 'material-ui'
 import { withStyles } from 'material-ui/styles';
+import { Link } from 'react-router-dom'
 
 
 const styles = {
@@ -39,7 +40,7 @@ const Index = (props) => {
                     <Typography variant="body1">
                         Do your school use these books and need a digital solution to grading?
                     </Typography>
-                    <Button  align="center" variant="raised" className={classes.button} component="a" href="/contact-us" color="secondary">Contact Us</Button>
+                    <Button component={Link} align="center" variant="raised" className={classes.button} to="/contact-us" color="secondary">Contact Us</Button>
 
                 </Grid>
                 </Grid>
