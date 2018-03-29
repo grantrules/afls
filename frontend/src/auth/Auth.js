@@ -15,16 +15,22 @@ class Auth extends React.Component {
         this.state = { anonymous: true }
     }
 
-    loginCallback(user, cb) {
+    /**
+     * Login callback with user details, called by provider
+     */
+    loginCallback(user, next) {
         if (user) {
             this.setState({anonymous: false})
         }
-        if (cb) cb(user)
+        if (next) next(user)
     }
 
-    logoutCallback(cb) {
+    /**
+     * Logout callback, called by provider
+     */
+    logoutCallback(next) {
         this.setState({anonymous: true})
-        if (cb) cb()
+        if (next) next()
     }
 
     componentDidMount() {
