@@ -4,6 +4,7 @@ import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
 
 import Slide from 'material-ui/transitions/Slide';
+
 import AddDialog from './AddDialog'
 
 function Transition(props) {
@@ -11,9 +12,9 @@ function Transition(props) {
 }
 
 /**
- * AddStudent dialog
+ * AddObjective dialog
  */
-class AddStudent extends AddDialog {
+class AddObjective extends AddDialog {
 
     render() {
         let close = this.props.close
@@ -64,4 +65,4 @@ class AddStudent extends AddDialog {
 }
 
 
-export default AddStudent
+export default AddObjective

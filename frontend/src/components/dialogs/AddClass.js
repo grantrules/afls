@@ -4,16 +4,19 @@ import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
 
 import Slide from 'material-ui/transitions/Slide';
+
 import AddDialog from './AddDialog'
+
 
 function Transition(props) {
   return <Slide direction="up" {...props} />;
 }
 
 /**
- * AddStudent dialog
+ * AddClass dialog
  */
-class AddStudent extends AddDialog {
+class AddClass extends AddDialog {
+
 
     render() {
         let close = this.props.close
@@ -25,25 +28,17 @@ class AddStudent extends AddDialog {
         onClose={close}
         open={this.props.open}        
         maxWidth="xs"
-        aria-labelledby="add-student-dialog-title"
+        aria-labelledby="add-class-dialog-title"
         transition={Transition}
       >
       <form onSubmit={this.handleSubmit}>
-        <DialogTitle id="add-student-dialog-title">Add Student</DialogTitle>
+        <DialogTitle id="add-class-dialog-title">Add Class</DialogTitle>
         <DialogContent>
             <TextField
                     autoFocus
                     onChange={this.handleChange}
-                    id="firstname"
-                    label="First Name"
-                    margin="normal"
-                    required
-                    />
-                    
-                    <TextField
-                    onChange={this.handleChange}
-                    id="lastname"
-                    label="Last Name"
+                    id="name"
+                    label="Class Name"
                     margin="normal"
                     required
                     />
@@ -64,4 +59,4 @@ class AddStudent extends AddDialog {
 }
 
 
-export default AddStudent
+export default AddClass

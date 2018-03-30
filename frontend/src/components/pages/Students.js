@@ -3,7 +3,7 @@ import List, { ListItem, ListItemText } from 'material-ui/List';
 import ActionGrade from 'material-ui-icons/Grade';
 import Divider from 'material-ui/Divider';
 import Avatar from 'material-ui/Avatar';
-import pink from 'material-ui/colors/pink';
+import Typography from 'material-ui/Typography';
 
 
 import Button from 'material-ui/Button';
@@ -11,7 +11,6 @@ import ContentAdd from 'material-ui-icons/Add';
 
 import AddStudent from '../dialogs/AddStudent'
 
-const pinkA200 = pink.A200;
 
 const style = {
     button: {
@@ -39,7 +38,7 @@ class Students extends React.Component {
         <List>
             <ListItem>
                 <Avatar>
-                    <ActionGrade color={pinkA200}/>
+                    <ActionGrade color="secondary"/>
                 </Avatar>
                 <ListItemText inset primary="Chelsea Otakan"/>
             </ListItem>
@@ -57,10 +56,9 @@ class Students extends React.Component {
         <List>
             <ListItem>
             <Avatar
-                        color={pinkA200}
                         style={{ left: 8 }}
                     >
-                        A
+                        <Typography variant="headline" color="secondary">A</Typography>
             </Avatar>
                 <ListItemText inset primary="Chelsea Otakan"/>
             </ListItem>
