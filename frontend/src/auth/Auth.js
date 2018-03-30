@@ -12,7 +12,7 @@ class Auth extends React.Component {
         this.loginCallback = this.loginCallback.bind(this)
         this.logoutCallback = this.logoutCallback.bind(this)
 
-        this.state = { anonymous: true, user: false }
+        this.state = { anonymous: true, user: null }
     }
 
     /**
@@ -29,7 +29,7 @@ class Auth extends React.Component {
      * Logout callback, called by provider
      */
     logoutCallback(next) {
-        this.setState({anonymous: true, user: false})
+        this.setState({anonymous: true, user: null})
         if (next) next()
     }
 
