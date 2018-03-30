@@ -26,29 +26,66 @@ class AddObjective extends AddDialog {
         onClose={close}
         open={this.props.open}        
         maxWidth="xs"
-        aria-labelledby="add-student-dialog-title"
+        aria-labelledby="add-objective-dialog-title"
         transition={Transition}
       >
       <form onSubmit={this.handleSubmit}>
-        <DialogTitle id="add-student-dialog-title">Add Student</DialogTitle>
+        <DialogTitle id="add-objective-dialog-title">Add Objective</DialogTitle>
         <DialogContent>
+
             <TextField
-                    autoFocus
-                    onChange={this.handleChange}
-                    id="firstname"
-                    label="First Name"
-                    margin="normal"
-                    required
-                    />
-                    
-                    <TextField
-                    onChange={this.handleChange}
-                    id="lastname"
-                    label="Last Name"
-                    margin="normal"
-                    required
-                    />
-                    <br />
+                onChange={this.handleChange}
+                id="name"
+                label="Task Name"
+                margin="dense"
+                required
+                />
+
+            <TextField
+                autoFocus
+                onChange={this.handleChange}
+                id="task"
+                label="Task"
+                margin="dense"
+                />
+
+            <TextField
+                onChange={this.handleChange}
+                id="score"
+                label="Score"
+                margin="dense"
+                required
+                />
+            
+
+            <TextField
+                onChange={this.handleChange}
+                id="objective"
+                label="Task Objective"
+                margin="dense"
+                required
+                />
+
+            <TextField
+                onChange={this.handleChange}
+                id="question"
+                label="Question"
+                margin="dense"
+                />
+
+            <TextField
+                onChange={this.handleChange}
+                id="example"
+                label="Example"
+                margin="dense"
+                />
+
+            <TextField
+                onChange={this.handleChange}
+                id="comment"
+                label="Comment"
+                margin="dense"
+                />
         </DialogContent>
         <DialogActions>
         <Button onClick={close} variant="raised" color="secondary" type="submit">
